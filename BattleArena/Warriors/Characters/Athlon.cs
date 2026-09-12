@@ -1,0 +1,34 @@
+﻿using BattleArena.Combat;
+using BattleArena.Enums;
+using System;
+using System.Threading;
+
+namespace BattleArena.Warriors
+{
+    public class Athlon : Warrior
+    {
+        public int PunchDamage { get; private set; }
+        public Athlon(int health, int attackPower, int punchDamage, TeamType teamType)
+            : base("Athlon", health, attackPower, WarriorType.Fighter, teamType)
+        {
+            PunchDamage = punchDamage;
+            attackPower += PunchDamage;
+        }
+
+        public override void Attack(Warrior target)
+        {
+            var dmginfo = new DamageInfo(AttackPower, "Sapak", HasCriticalChance, this);
+            TakeDamage(dmginfo);
+
+            Console.WriteLine($"->{Name}: Sasapakin kita {target.Name}!");
+
+            Thread.Sleep(1000);
+            Console.WriteLine($"->{target.Name}: Aray ko po!");
+
+            Thread.Sleep(1000);
+            if (target.IsAlive)
+                Console.WriteLine($"->{target.Name}: Buhay pa ko bebe {target.Name}");
+        }
+    }
+
+}

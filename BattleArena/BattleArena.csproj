@@ -43,18 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abilities\IDefender.cs" />
+    <Compile Include="Abilities\IHealable.cs" />
+    <Compile Include="Abilities\IHealCaster.cs" />
+    <Compile Include="Abilities\ISpellCaster.cs" />
+    <Compile Include="Combat\DamageInfo.cs" />
+    <Compile Include="Enums\TeamType.cs" />
+    <Compile Include="Enums\WarriorType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Warriors\Agoot.cs" />
-    <Compile Include="Warriors\DamageInfo.cs" />
-    <Compile Include="Warriors\Athlon.cs" />
-    <Compile Include="Warriors\Raymond.cs" />
-    <Compile Include="Warriors\Kirk.cs" />
+    <Compile Include="Warriors\Characters\Agoot.cs" />
+    <Compile Include="Warriors\Characters\Athlon.cs" />
+    <Compile Include="Warriors\Characters\Raymond.cs" />
+    <Compile Include="Warriors\Characters\Kirk.cs" />
     <Compile Include="Warriors\Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
